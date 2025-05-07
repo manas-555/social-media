@@ -1,10 +1,13 @@
-runtime: static
+runtime: nodejs18 # Use Node.js runtime (Node.js 18)
+
+env: flex # Use flexible environment
 
 handlers:
+  - url: /static
+    static_dir: build/static # Serve static assets from build/static directory
   - url: /
-    static_files: build/index.html
+    static_files: build/index.html # Serve the React app's main HTML file
     upload: build/index.html
-
   - url: /(.*)
-    static_files: build/\1
+    static_files: build/\1 # Serve other static files (JS, CSS, images, etc.)
     upload: build/(.*)
