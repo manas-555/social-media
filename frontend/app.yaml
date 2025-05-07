@@ -1,4 +1,4 @@
-runtime: nodejs20 # Update to a supported version (nodejs16)
+runtime: nodejs22
 
 env: flex
 
@@ -8,3 +8,6 @@ handlers:
   - url: /
     static_files: build/index.html
     upload: build/index.html
+  - url: /(.*)
+    static_files: build/\1
+    upload: build/(.*)
