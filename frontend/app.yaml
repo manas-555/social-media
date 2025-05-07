@@ -1,4 +1,4 @@
-runtime: nodejs16 # Update to a supported version (nodejs16)
+runtime: nodejs20 # Update to a supported version (nodejs16)
 
 env: flex
 
