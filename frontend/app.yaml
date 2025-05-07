@@ -1,13 +1,10 @@
-runtime: nodejs18 # Use Node.js runtime (Node.js 18)
+runtime: nodejs16 # Update to a supported version (nodejs16)
 
-env: flex # Use flexible environment
+env: flex
 
 handlers:
   - url: /static
-    static_dir: build/static # Serve static assets from build/static directory
+    static_dir: build
   - url: /
-    static_files: build/index.html # Serve the React app's main HTML file
+    static_files: build/index.html
     upload: build/index.html
-  - url: /(.*)
-    static_files: build/\1 # Serve other static files (JS, CSS, images, etc.)
-    upload: build/(.*)
